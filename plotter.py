@@ -39,10 +39,6 @@ compact_data.to_csv("compact_data.csv", index=False, encoding="utf-8")
 median_info = pd.read_csv("compact_data.csv", usecols=["MedianTime"])
 median_info["index"] = range(1, len(median_info) + 1)
 
-plt.figure()
-plt.plot([1, 2, 3, 4], [5, 6, 7, 8])
-plt.show()
-
 
 def saveGraph(size, compact_data):
     x_unc = []
