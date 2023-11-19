@@ -13,6 +13,8 @@ for file_name in glob.glob("./csvFolder/" + "*.csv"):
     median = x[" ExeTime "].median()
     quarter = x[" ExeTime "].quantile(0.25)
     thirdQuarter = x[" ExeTime "].quantile(0.75)
+    maximum = x[" ExeTime "].max()
+    minimum = x[" ExeTime "].min()
     dataType = x[" DataType"][1]
     algo = x[" SortingAlgo"][1]
     sortingType = x[" SortingType"][1]
@@ -24,10 +26,12 @@ for file_name in glob.glob("./csvFolder/" + "*.csv"):
             "SortingType": sortingType,
             "DataType": dataType,
             "DataSize": dataSize,
+            "Minimum Exe": minimum,
             "AvgTime": mean,
             "MedianTime": median,
             "25th": quarter,
             "75th": thirdQuarter,
+            "Maximum Exe": maximum,
         }
     )
 
