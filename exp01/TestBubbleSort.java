@@ -36,9 +36,12 @@ public class TestBubbleSort {
 
         String sortOrder = "Descending";
         int arraySize = 10000;
-        String filenamePpi = sortOrder + "_ppi_" + "Float_" + Integer.toString(arraySize) + ".csv";
-        String filenameUnc = sortOrder + "_unc_" + "Float_" + Integer.toString(arraySize) + ".csv";
-        String filenameWn = sortOrder + "_wn_" + "Float_" + Integer.toString(arraySize) + ".csv";
+        String dataType = "Float";
+        String filenamePpi = "./csvFolder/" + sortOrder + "_ppi_" + dataType + "_" + Integer.toString(arraySize)
+                + ".csv";
+        String filenameUnc = "./csvFolder/" + sortOrder + "_unc_" + dataType + "_" + Integer.toString(arraySize)
+                + ".csv";
+        String filenameWn = "./csvFolder/" + sortOrder + "_wn_" + dataType + "_" + Integer.toString(arraySize) + ".csv";
 
         try {
             File filePpi = new File(filenamePpi);
@@ -71,11 +74,11 @@ public class TestBubbleSort {
                 long executionTimeUnc = testAlgo(uncSorter, uncArray);
                 long executionTimeWn = testAlgo(wnSorter, wnArray);
 
-                generateResultCSV(i, "PassPerItem", "Float", arraySize, executionTimePpi, sortOrder,
+                generateResultCSV(i, "PassPerItem", dataType, arraySize, executionTimePpi, sortOrder,
                         bufferedWriterPpi);
-                generateResultCSV(i, "UntilNoChange", "Float", arraySize, executionTimeUnc, sortOrder,
+                generateResultCSV(i, "UntilNoChange", dataType, arraySize, executionTimeUnc, sortOrder,
                         bufferedWriterUnc);
-                generateResultCSV(i, "WhileNeeded", "Float", arraySize, executionTimeWn, sortOrder, bufferedWriterWn);
+                generateResultCSV(i, "WhileNeeded", dataType, arraySize, executionTimeWn, sortOrder, bufferedWriterWn);
             }
             bufferedWriterPpi.close();
             bufferedWriterUnc.close();

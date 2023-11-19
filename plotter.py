@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import math
 
+plt.rcParams["figure.figsize"] = [10.0, 10.0]
 compact_array = []
 glued_data = pd.DataFrame()
 for file_name in glob.glob("./csvFolder/" + "*.csv"):
@@ -38,6 +39,10 @@ compact_data.to_csv("compact_data.csv", index=False, encoding="utf-8")
 median_info = pd.read_csv("compact_data.csv", usecols=["MedianTime"])
 median_info["index"] = range(1, len(median_info) + 1)
 
+plt.figure()
+plt.plot([1, 2, 3, 4], [5, 6, 7, 8])
+plt.show()
+
 
 def saveGraph(size, compact_data):
     x_unc = []
@@ -64,7 +69,6 @@ def saveGraph(size, compact_data):
             x_wn.append(x)
             y_wn.append(row["MedianTime"])
     plt.figure()
-    plt.rcParams["figure.figsize"] = [10.0, 10.0]
     plt.title("Bubble Sorting of " + str(size) + " datapoints", loc="left")
     plt.xlabel(
         "PreSort Status and Datatype \n (R = random, A = Ascending, D = Descending, I = Integer, D = Double, F = Float)"
