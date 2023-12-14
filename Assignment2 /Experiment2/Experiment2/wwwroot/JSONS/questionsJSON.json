@@ -1,0 +1,50 @@
+﻿[ {
+    "Question": "What is the capital of France?", "Answers": [ "Paris", "Berlin", "Rome", "Madrid" ], "CorrectAnswerIndex": 0
+}
+
+,
+{
+    "Question": "Which planet is known as the Red Planet?", "Answers": [ "Earth", "Venus", "Mars", "Jupiter" ], "CorrectAnswerIndex": 2
+}
+
+,
+{
+    "Question": "What is the largest ocean on Earth?", "Answers": [ "Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean" ], "CorrectAnswerIndex": 3
+}
+
+,
+{
+    "Question": "Who wrote 'Romeo and Juliet'?", "Answers": [ "William Shakespeare", "Leo Tolstoy", "Mark Twain", "Charles Dickens" ], "CorrectAnswerIndex": 0
+}
+
+,
+{
+    "Question": "What is the chemical symbol for Gold?", "Answers": [ "Au", "Ag", "Fe", "O" ], "CorrectAnswerIndex": 0
+}
+
+,
+{
+    "Question": "Which country is known as the Land of the Rising Sun?", "Answers": [ "China", "Australia", "Japan", "India" ], "CorrectAnswerIndex": 2
+}
+
+,
+{
+    "Question": "What is the hardest natural substance on Earth?", "Answers": [ "Iron", "Diamond", "Gold", "Silver" ], "CorrectAnswerIndex": 1
+}
+
+,
+{
+    "Question": "Who painted the Mona Lisa?", "Answers": [ "Vincent Van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo" ], "CorrectAnswerIndex": 2
+}
+
+,
+{
+    "Question": "What is the currency of Japan?", "Answers": [ "Yuan", "Dollar", "Euro", "Yen" ], "CorrectAnswerIndex": 3
+}
+
+,
+{
+    "Question": "How many continents are there on Earth?", "Answers": [ "Five", "Six", "Seven", "Eight" ], "CorrectAnswerIndex": 2
+}
+
+]

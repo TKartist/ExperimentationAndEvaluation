@@ -1,0 +1,42 @@
+﻿@page "/quiz"
+@using Experiment2.Services
+@using Experiment2.Models
+@inject IJSRuntime JSRuntime
+@inject QuizService QuizService
+
+@if (currentQuestion != null)
+{
+    <h3 class="quiz-question">@currentQuestion.Question</h3>
+    @foreach (var answer in currentQuestion.Answers)
+    {
+        <button class="quiz-answer-button" @onclick="() => SubmitAnswer(currentQuestion.Answers.IndexOf(answer))">@answer</button>
+    }
+}
+else
+{
+    <div class="quiz-completed">
+        <h3>Quiz Completed!</h3>
+        <button class="quiz-download-button" @onclick="DownloadResults">Download Results</button>
+    </div>
+}
+@code {
+    private QuizQuestion currentQuestion;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await QuizService.InitializeAsync();
+        currentQuestion = QuizService.GetNextQuestion();
+    }
+
+    private void SubmitAnswer(int answerIndex)
+    {
+        QuizService.CalculateScore(answerIndex);
+        currentQuestion = QuizService.GetNextQuestion();
+    }
+
+    private async Task DownloadResults()
+    {
+        var json = QuizService.GetResultsJson();
+        await JSRuntime.InvokeVoidAsync("downloadFile", json, "QuizResults.json", "application/json");
+    }
+}

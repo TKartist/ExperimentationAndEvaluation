@@ -1,0 +1,11 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+<button @onclick="StartQuiz">Start Quiz</button>
+
+@code {
+    private void StartQuiz()
+    {
+        NavigationManager.NavigateTo("/quiz");
+    }
+}

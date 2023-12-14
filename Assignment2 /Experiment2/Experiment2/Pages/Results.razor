@@ -1,0 +1,54 @@
+﻿@page "/results"
+@inject HttpClient Http
+@using Experiment2.Models
+@using System.Text.Json
+@using System.Collections.Generic
+@using System.Linq
+@using System.Threading.Tasks
+
+<h2>Quiz Results</h2>
+
+@if (quizResults == null)
+{
+    <p>Loading results...</p>
+}
+else if (!quizResults.Any())
+{
+    <p>No results available.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Your Answer</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var result in quizResults)
+            {
+                <tr>
+                    <td>@result.Question</td>
+                    <td>@(result.IsCorrect ? "Correct" : "Incorrect")</td>
+                    <td>@result.Score</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<QuizResult> quizResults;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await Http.GetAsync("KahootResults.json");
+        if (response.IsSuccessStatusCode)
+        {
+            var jsonString = await response.Content.ReadAsStringAsync();
+            quizResults = JsonSerializer.Deserialize<List<QuizResult>>(jsonString) ?? new List<QuizResult>();
+        }
+    }
+}

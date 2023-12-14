@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{A84AE744-15D5-4CD8-86AB-5CCB27DA3D57}|https">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Experiment2/Pages/Results.razor">
+    <Files>
+      <File FileName="Experiment2/Pages/Index.razor" Line="12" Column="1" />
+      <File FileName="Experiment2/Models/QuizQuestion.cs" />
+      <File FileName="Experiment2/Models/QuizResult.cs" />
+      <File FileName="Experiment2/Services/QuizService.cs" Line="25" Column="82" />
+      <File FileName="Experiment2/Program.cs" />
+      <File FileName="Experiment2/wwwroot/KahootResults.json" />
+      <File FileName="Experiment2/Shared/MainLayout.razor" />
+      <File FileName="Experiment2/Shared/SurveyPrompt.razor" />
+      <File FileName="Experiment2/Shared/NavMenu.razor" />
+      <File FileName="Experiment2/wwwroot/index.html" />
+      <File FileName="Experiment2/Pages/Quiz.razor" Line="41" Column="2" />
+      <File FileName="Experiment2/Pages/Results.razor" Line="39" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Experiment2" expanded="True">
+            <Node name="Experiment2" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="Shared" expanded="True" />
+              <Node name="wwwroot" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Experiment2 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
