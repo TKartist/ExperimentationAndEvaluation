@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9vBpzMNVA2NlhfyYC3uzj0zojldjSCXbix5cin6FqEw=",
+  "Hash": "PeTHvwdlIBxuQI9wx3lMBZ43xeI3mihm93jOKldRc3k=",
   "Source": "Experiment2",
   "BasePath": "/",
   "Mode": "Root",
@@ -6934,6 +6934,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/app.css"
+    },
+    {
+      "Identity": "/Users/batyrgeo/Documents/GitHub/ExperimentationAndEvaluation/Assignment2 /Experiment2/Experiment2/wwwroot/css/background.jpeg",
+      "SourceId": "Experiment2",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/batyrgeo/Documents/GitHub/ExperimentationAndEvaluation/Assignment2 /Experiment2/Experiment2/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "css/background.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/background.jpeg"
     },
     {
       "Identity": "/Users/batyrgeo/Documents/GitHub/ExperimentationAndEvaluation/Assignment2 /Experiment2/Experiment2/wwwroot/css/bootstrap/bootstrap.min.css",

@@ -1,50 +1,152 @@
-﻿[ {
-    "Question": "What is the capital of France?", "Answers": [ "Paris", "Berlin", "Rome", "Madrid" ], "CorrectAnswerIndex": 0
-}
-
-,
-{
-    "Question": "Which planet is known as the Red Planet?", "Answers": [ "Earth", "Venus", "Mars", "Jupiter" ], "CorrectAnswerIndex": 2
-}
-
-,
-{
-    "Question": "What is the largest ocean on Earth?", "Answers": [ "Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean" ], "CorrectAnswerIndex": 3
-}
-
-,
-{
-    "Question": "Who wrote 'Romeo and Juliet'?", "Answers": [ "William Shakespeare", "Leo Tolstoy", "Mark Twain", "Charles Dickens" ], "CorrectAnswerIndex": 0
-}
-
-,
-{
-    "Question": "What is the chemical symbol for Gold?", "Answers": [ "Au", "Ag", "Fe", "O" ], "CorrectAnswerIndex": 0
-}
-
-,
-{
-    "Question": "Which country is known as the Land of the Rising Sun?", "Answers": [ "China", "Australia", "Japan", "India" ], "CorrectAnswerIndex": 2
-}
-
-,
-{
-    "Question": "What is the hardest natural substance on Earth?", "Answers": [ "Iron", "Diamond", "Gold", "Silver" ], "CorrectAnswerIndex": 1
-}
-
-,
-{
-    "Question": "Who painted the Mona Lisa?", "Answers": [ "Vincent Van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo" ], "CorrectAnswerIndex": 2
-}
-
-,
-{
-    "Question": "What is the currency of Japan?", "Answers": [ "Yuan", "Dollar", "Euro", "Yen" ], "CorrectAnswerIndex": 3
-}
-
-,
-{
-    "Question": "How many continents are there on Earth?", "Answers": [ "Five", "Six", "Seven", "Eight" ], "CorrectAnswerIndex": 2
-}
-
+﻿[
+    {
+        "Question": "Convert add item:",
+        "Answers": [ "add_Item", "additem", "addItem", "adDitem" ],
+        "CorrectAnswerIndex": 2
+    },
+    {
+        "Question": "Convert delete user:",
+        "Answers": [ "DeleteUser", "delete_User", "deleteuser", "deleteUser" ],
+        "CorrectAnswerIndex": 3
+    },
+    {
+        "Question": "Convert find product:",
+        "Answers": [ "find_Product", "findproduct", "FindProduct", "findProduct" ],
+        "CorrectAnswerIndex": 3
+    },
+    {
+        "Question": "Convert save changes:",
+        "Answers": [ "saveChanges", "save_Changes", "savechanges", "SaveChanges" ],
+        "CorrectAnswerIndex": 0
+    },
+    {
+        "Question": "Convert load file:",
+        "Answers": [ "loadFile", "loadfile", "LoadFile", "load_File" ],
+        "CorrectAnswerIndex": 0
+    },
+    {
+        "Question": "Convert create account:",
+        "Answers": [ "createAccount", "create_Account", "createaccount", "CreateAccount" ],
+        "CorrectAnswerIndex": 0
+    },
+    {
+        "Question": "Convert edit profile:",
+        "Answers": [ "edit_Profile", "editProfile", "EditProfile", "editprofile" ],
+        "CorrectAnswerIndex": 1
+    },
+    {
+        "Question": "Convert search entry:",
+        "Answers": [ "search_Entry", "searchentry", "SearchEntry", "searchEntry" ],
+        "CorrectAnswerIndex": 3
+    },
+    {
+        "Question": "Convert update status:",
+        "Answers": [ "updateStatus", "update_Status", "updatestatus", "UpdateStatus" ],
+        "CorrectAnswerIndex": 0
+    },
+    {
+        "Question": "Convert remove filter:",
+        "Answers": [ "removefilter", "removeFilter", "RemoveFilter", "remove_Filter" ],
+        "CorrectAnswerIndex": 1
+    },
+    {
+        "Question": "Convert play video:",
+        "Answers": [ "playvideo", "playVideo", "PlayVideo", "play_Video" ],
+        "CorrectAnswerIndex": 1
+    },
+    {
+        "Question": "Convert pause music:",
+        "Answers": [ "pause_Music", "PauseMusic", "pausemusic", "pauseMusic" ],
+        "CorrectAnswerIndex": 3
+    },
+    {
+        "Question": "Convert upload image:",
+        "Answers": [ "uploadImage", "upload_Image", "UploadImage", "uploadimage" ],
+        "CorrectAnswerIndex": 0
+    },
+    {
+        "Question": "Convert refresh page:",
+        "Answers": [ "refresh_Page", "refreshPage", "RefreshPage", "refreshpage" ],
+        "CorrectAnswerIndex": 1
+    },
+    {
+        "Question": "Convert calculate total:",
+        "Answers": [ "calculateTotal", "calculate_Total", "calculatetotal", "CalculateTotal" ],
+        "CorrectAnswerIndex": 0
+    },
+    {
+        "Question": "Convert add item:",
+        "Answers": [ "additem", "add-item", "additem-", "add_Item" ],
+        "CorrectAnswerIndex": 1
+    },
+    {
+        "Question": "Convert delete user:",
+        "Answers": [ "delete_User", "deleteuser", "delete-user", "deleteuser-" ],
+        "CorrectAnswerIndex": 2
+    },
+    {
+        "Question": "Convert find product:",
+        "Answers": [ "findproduct", "find-product", "find_Product", "findproduct-" ],
+        "CorrectAnswerIndex": 1
+    },
+    {
+        "Question": "Convert save changes:",
+        "Answers": [ "save-changes", "savechanges", "save_Changes", "savechanges-" ],
+        "CorrectAnswerIndex": 0
+    },
+    {
+        "Question": "Convert load file:",
+        "Answers": [ "load-file", "loadfile-", "loadfile", "load_File" ],
+        "CorrectAnswerIndex": 0
+    },
+    {
+        "Question": "Convert create account:",
+        "Answers": [ "create_Account", "create-account", "createaccount-", "createaccount" ],
+        "CorrectAnswerIndex": 1
+    },
+    {
+        "Question": "Convert edit profile:",
+        "Answers": [ "edit-profile", "editprofile-", "editprofile", "edit_Profile" ],
+        "CorrectAnswerIndex": 0
+    },
+    {
+        "Question": "Convert search entry:",
+        "Answers": [ "searchentry-", "searchentry", "search-entry", "search_Entry" ],
+        "CorrectAnswerIndex": 2
+    },
+    {
+        "Question": "Convert update status:",
+        "Answers": [ "updatestatus-", "updatestatus", "update-status", "update_Status" ],
+        "CorrectAnswerIndex": 2
+    },
+    {
+        "Question": "Convert remove filter:",
+        "Answers": [ "removefilter-", "removefilter", "remove-filter", "remove_Filter" ],
+        "CorrectAnswerIndex": 2
+    },
+    {
+        "Question": "Convert play video:",
+        "Answers": [ "playvideo-", "play-video", "playvideo", "play_Video" ],
+        "CorrectAnswerIndex": 1
+    },
+    {
+        "Question": "Convert pause music:",
+        "Answers": [ "pausemusic-", "pausemusic", "pause-music", "pause_Music" ],
+        "CorrectAnswerIndex": 2
+    },
+    {
+        "Question": "Convert upload image:",
+        "Answers": [ "upload_Image", "uploadimage-", "uploadimage", "upload-image" ],
+        "CorrectAnswerIndex": 3
+    },
+    {
+        "Question": "Convert refresh page:",
+        "Answers": [ "refreshpage-", "refreshpage", "refresh-page", "refresh_Page" ],
+        "CorrectAnswerIndex": 2
+    },
+    {
+        "Question": "Convert calculate total:",
+        "Answers": [ "calculate_Total", "calculate-total", "calculatetotal-", "calculatetotal" ],
+        "CorrectAnswerIndex": 1
+    }
 ]

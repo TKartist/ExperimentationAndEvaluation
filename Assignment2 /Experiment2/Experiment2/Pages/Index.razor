@@ -1,7 +1,33 @@
 ﻿@page "/"
 @inject NavigationManager NavigationManager
+<div class="welcome-container">
+    <h1>Welcome to the Reading Speed Experiment</h1>
 
-<button @onclick="StartQuiz">Start Quiz</button>
+    <h3> For the ones who did not know:</h3>
+
+    <p>Discover whether camelCase or kebab-case is faster to read!</p>
+    <button class="start-button" @onclick="StartQuiz">Start Quiz</button>
+</div>
+
+<div class="container">
+    <h2>What is Kebab Case?</h2>
+    <p>The kebab case is very similar to snake case.</p>
+    <p>The difference between snake case and kebab case is that kebab case separates each word with a dash character, -, instead of an underscore.</p>
+    <p>So, all words are lowercase, and each word gets separated by a dash.</p>
+    <p>The kebab case is another one of the most human-readable ways of combining multiple words into a single word.</p>
+    <p>Here are some examples of how you would use kebab case:</p>
+    <code>number-of-donuts = 34</code><br>
+    <code>favorite-phrase = "Hello World"</code>
+
+    <h2>What is Camel Case?</h2>
+    <p>When using camel case, you start by making the first word lowercase. Then, you capitalize the first letter of each word that follows.</p>
+    <p>So, a capital letter appears at the start of the second word and at each new subsequent word that follows it.</p>
+    <p>Here are some examples of how you would use camel case:</p>
+    <code>numberOfDonuts = 34</code><br>
+    <code>favoritePhrase = "Hello World"</code>
+    <p>In the example numberOfDonuts, the first word number is lowercase. Then, the first letter of the second word of is capitalized, as is the first letter of the third word, <code>donuts</code>.</p>
+    <p>You will encounter camel case in Java, JavaScript, and TypeScript for creating variable, function, and method names.</p>
+</div>
 
 @code {
     private void StartQuiz()

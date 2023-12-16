@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets/css/app.css"
     },
     {
+      "Id": "/Users/batyrgeo/Documents/GitHub/ExperimentationAndEvaluation/Assignment2 /Experiment2/Experiment2/wwwroot/css/background.jpeg",
+      "PackagePath": "staticwebassets/css/background.jpeg"
+    },
+    {
       "Id": "/Users/batyrgeo/Documents/GitHub/ExperimentationAndEvaluation/Assignment2 /Experiment2/Experiment2/wwwroot/css/bootstrap/bootstrap.min.css",
       "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
     },
