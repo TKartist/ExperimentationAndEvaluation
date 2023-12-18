@@ -22,6 +22,8 @@
   <ItemGroup>
     <None Remove="Models\" />
     <None Remove="Services\" />
+    <None Remove="Models\protobuf.proto" />
+    <None Remove="Models\hello.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

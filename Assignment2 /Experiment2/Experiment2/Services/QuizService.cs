@@ -12,6 +12,7 @@ namespace Experiment2.Services
         private readonly HttpClient _http;
         private List<QuizQuestion> questions;
         private List<QuizResult> results = new List<QuizResult>();
+        private ParticipantDetails participantDetails;
         private int currentQuestionIndex = -1;
         private DateTime questionStartTime;
 
@@ -45,7 +46,7 @@ namespace Experiment2.Services
         {
             var timeTaken = DateTime.Now - questionStartTime;
             var isCorrect = questions[currentQuestionIndex].CorrectAnswerIndex == answerIndex;
-            var score = isCorrect ? Math.Max(0, 1000 - (int)timeTaken.TotalSeconds * 10) : Math.Max(0, 1000 - (int)timeTaken.TotalSeconds * 100);
+            var score = isCorrect ? Math.Max(0, 1000 - (int)timeTaken.TotalSeconds * 10) : 0;
 
             results.Add(new QuizResult
             {
@@ -57,9 +58,31 @@ namespace Experiment2.Services
             return score;
         }
 
+        public void AddParticipantDetails(ParticipantDetails details)
+        {
+            participantDetails = details;
+        }
+
         public string GetResultsJson()
         {
-            return JsonSerializer.Serialize(results, new JsonSerializerOptions { WriteIndented = true });
+            var resultsData = new ResultsData
+            {
+                Questions = results,
+                Participant = participantDetails
+            };
+
+            return JsonSerializer.Serialize(resultsData, new JsonSerializerOptions { WriteIndented = true });
         }
+
+        public bool HasQuestions()
+        {
+            return currentQuestionIndex < questions.Count - 1;
+        }
+    }
+
+    public class ResultsData
+    {
+        public List<QuizResult> Questions { get; set; }
+        public ParticipantDetails Participant { get; set; }
     }
 }

@@ -5,74 +5,111 @@
 @inject QuizService QuizService
 
 @if (currentQuestion != null)
-
 {
     if (showQuestion)
     {
-    <h3 class="quiz-question">@currentQuestion.Question</h3>
-
-    }
-      
+        <h3 class="quiz-question">@currentQuestion.Question</h3>
+        }
         <div class="quiz-buttons-container">
             @foreach (var answer in currentQuestion.Answers)
             {
                 <button class="quiz-answer-button" @onclick="() => SubmitAnswer(currentQuestion.Answers.IndexOf(answer))">@answer</button>
             }
         </div>
-        }
-        else
-        {
-        <div class="quiz-completed">
-            <h3>Quiz Completed!</h3>
-            <button class="quiz-download-button" @onclick="DownloadResults">Download Results</button>
-        </div>
-        }
+  
+}
+else if (!formSubmitted)
+{
+    <EditForm Model="participantDetails" OnValidSubmit="HandleFormSubmit">
+        <InputText @bind-Value="participantDetails.Name" placeholder="Name" />
+        <InputNumber @bind-Value="participantDetails.Age" placeholder="Age" />
+        <InputSelect @bind-Value="participantDetails.Sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </InputSelect>
+        <InputCheckbox @bind-Value="participantDetails.WearsGlasses" /> Wears Glasses
+        <InputCheckbox @bind-Value="participantDetails.UsedMaximumLighting" /> Used Maximum Lighting
+        <InputSelect @bind-Value="participantDetails.PriorProgrammingExperience">
+            <option value="None">None</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+        </InputSelect>
+        <InputText @bind-Value="participantDetails.TimeOfDay" placeholder="Time of Day" />
+        <button type="submit">Submit</button>
+    </EditForm>
+}
+else
+{
+    <div class="quiz-completed">
+        <h3>Quiz Completed!</h3>
+        <button class="quiz-download-button" @onclick="DownloadResults">Download Results</button>
+    </div>
+}
 
-        @code {
+@code {
     private QuizQuestion currentQuestion;
-        private bool showQuestion = true;
-        private System.Threading.Timer questionTimer;
+    private bool showQuestion = true;
+    private bool formSubmitted = false;
+    private ParticipantDetails participantDetails = new ParticipantDetails();
+    private System.Threading.Timer questionTimer;
 
-        protected override async Task OnInitializedAsync()
-        {
-            await QuizService.InitializeAsync();
-            LoadNextQuestion();
-        }
+    protected override async Task OnInitializedAsync()
+    {
+        await QuizService.InitializeAsync();
+        LoadNextQuestion();
+    }
 
-        private void LoadNextQuestion()
+    private void LoadNextQuestion()
+    {
+        if (QuizService.HasQuestions())
         {
             showQuestion = true;
             currentQuestion = QuizService.GetNextQuestion();
             ResetTimer();
             StateHasChanged(); // Re-render the component
         }
-
-        private void ResetTimer()
+        else
         {
-            questionTimer?.Dispose();
-            questionTimer = new System.Threading.Timer(_ => HideQuestion(), null, 2000, Timeout.Infinite);
+            currentQuestion = null;
         }
+    }
 
-        private void HideQuestion()
-        {
-            showQuestion = false;
-            InvokeAsync(StateHasChanged); // Ensure this runs on the main thread
-        }
+    private void ResetTimer()
+    {
+        questionTimer?.Dispose();
+        questionTimer = new System.Threading.Timer(_ => HideQuestion(), null, 2000, Timeout.Infinite);
+    }
 
-        private void SubmitAnswer(int answerIndex)
-        {
-            QuizService.CalculateScore(answerIndex);
-            LoadNextQuestion();
-        }
+    private void HideQuestion()
+    {
+        showQuestion = false;
+        InvokeAsync(StateHasChanged); // Ensure this runs on the main thread
+    }
 
-        private async Task DownloadResults()
-        {
-            var json = QuizService.GetResultsJson();
-            await JSRuntime.InvokeVoidAsync("downloadFile", json, "QuizResults.json", "application/json");
-        }
+    private void SubmitAnswer(int answerIndex)
+    {
+        QuizService.CalculateScore(answerIndex);
+        LoadNextQuestion();
+    }
 
-        public void Dispose()
-        {
-            questionTimer?.Dispose();
-        }
-        }
+    private async Task DownloadResults()
+    {
+        var json = QuizService.GetResultsJson();
+        await JSRuntime.InvokeVoidAsync("downloadFile", json, "QuizResults.json", "application/json");
+    }
+
+    private void HandleFormSubmit()
+    {
+        QuizService.AddParticipantDetails(participantDetails);
+        formSubmitted = true;
+    }
+
+    public void Dispose()
+    {
+        questionTimer?.Dispose();
+    }
+}
+
+
