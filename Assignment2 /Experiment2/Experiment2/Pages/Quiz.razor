@@ -21,22 +21,15 @@
 else if (!formSubmitted)
 {
     <EditForm Model="participantDetails" OnValidSubmit="HandleFormSubmit">
-        <InputText @bind-Value="participantDetails.Name" placeholder="Name" />
-        <InputNumber @bind-Value="participantDetails.Age" placeholder="Age" />
-        <InputSelect @bind-Value="participantDetails.Sex">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-        </InputSelect>
+      
+
         <InputCheckbox @bind-Value="participantDetails.WearsGlasses" /> Wears Glasses
-        <InputCheckbox @bind-Value="participantDetails.UsedMaximumLighting" /> Used Maximum Lighting
         <InputSelect @bind-Value="participantDetails.PriorProgrammingExperience">
             <option value="None">None</option>
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Advanced">Advanced</option>
         </InputSelect>
-        <InputText @bind-Value="participantDetails.TimeOfDay" placeholder="Time of Day" />
         <button type="submit">Submit</button>
     </EditForm>
 }

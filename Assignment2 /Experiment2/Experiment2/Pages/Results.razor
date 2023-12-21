@@ -15,23 +15,38 @@ else if (!quizResults.Any())
 }
 else
 {
-    <div>
-        <h3>Participant Details</h3>
-        <p>Name: @participantDetails.Name</p>
-        <p>Age: @participantDetails.Age</p>
-        <p>Sex: @participantDetails.Sex</p>
-        <p>Wears Glasses: @(participantDetails.WearsGlasses ? "Yes" : "No")</p>
-        <p>Used Maximum Lighting: @(participantDetails.UsedMaximumLighting ? "Yes" : "No")</p>
-        <p>Prior Programming Experience: @participantDetails.PriorProgrammingExperience</p>
-        <p>Time of Day: @participantDetails.TimeOfDay</p>
-    </div>
+<div>
+    <h3>Participant Details</h3>
+    <p>Wears Glasses: @(participantDetails.WearsGlasses ? "Yes" : "No")</p>
+    <p>Used Maximum Lighting: @(participantDetails.UsedMaximumLighting ? "Yes" : "No")</p>
+    <p>Prior Programming Experience: @participantDetails.PriorProgrammingExperience</p>>
+    <h3>Average Camel Score: @CalculateAverageCamelScore()</h3>
+    <h3>Kebab-case Average: @CalculateKebabCaseAverage()</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var result in quizResults)
+            {
+                <tr>
+                    <td>@result.Score</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Question</th>
                 <th>Your Answer</th>
-                <th>Score</th>
+             
             </tr>
         </thead>
         <tbody>
@@ -40,7 +55,7 @@ else
                 <tr>
                     <td>@result.Question</td>
                     <td>@(result.IsCorrect ? "Correct" : "Incorrect")</td>
-                    <td>@result.Score</td>
+                   
                 </tr>
             }
         </tbody>
@@ -63,6 +78,31 @@ else
             participantDetails = resultsData?.Participant;
         }
     }
+
+
+
+    private double CalculateAverageCamelScore()
+    {
+        if (quizResults.Count >= 15)
+        {
+            return quizResults.Take(10).Average(result => result.Score);
+        }
+        return 0;
+    }
+
+    // Method to calculate average of scores from 15th to 30th
+    private double CalculateKebabCaseAverage()
+    {
+        if (quizResults.Count >= 30)
+        {
+            return quizResults.Skip(14).Take(16).Average(result => result.Score);
+        }
+        return 0;
+    }
+
+
+
+
 
     private class ResultsData
     {

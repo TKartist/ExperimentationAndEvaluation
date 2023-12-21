@@ -65,10 +65,15 @@ namespace Experiment2.Services
 
         public string GetResultsJson()
         {
+            var first15Average = CalculateAverageForFirst15Questions();
+            var next15Average = CalculateAverageForNext15Questions();
+
             var resultsData = new ResultsData
             {
                 Questions = results,
-                Participant = participantDetails
+                Participant = participantDetails,
+                First15Average = first15Average,
+                Next15Average = next15Average
             };
 
             return JsonSerializer.Serialize(resultsData, new JsonSerializerOptions { WriteIndented = true });
@@ -78,11 +83,27 @@ namespace Experiment2.Services
         {
             return currentQuestionIndex < questions.Count - 1;
         }
+
+
+        public double CalculateAverageForFirst15Questions()
+        {
+            return results.Take(15).Average(result => result.Score);
+        }
+
+        public double CalculateAverageForNext15Questions()
+        {
+            return results.Count > 15 ? results.Skip(15).Take(15).Average(result => result.Score) : 0;
+        }
+
     }
+
+
 
     public class ResultsData
     {
         public List<QuizResult> Questions { get; set; }
         public ParticipantDetails Participant { get; set; }
+        public double First15Average { get; set; }
+        public double Next15Average { get; set; }
     }
 }
